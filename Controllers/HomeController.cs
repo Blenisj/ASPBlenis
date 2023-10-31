@@ -1,6 +1,7 @@
 ﻿using ASPBlenis.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Xml.Linq;
 
 namespace ASPBlenis.Controllers
 {
@@ -13,8 +14,9 @@ namespace ASPBlenis.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string name)
         {
+            ViewData["Message"] = "Hello " + name;
             return View();
         }
 
